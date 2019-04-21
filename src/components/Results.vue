@@ -13,7 +13,6 @@
       <span class="total-results">
         <b>Count:</b> {{total_results}}
       </span>
-
     </p>
 
     <ul>
@@ -21,13 +20,10 @@
         <img
           :src="'https://image.tmdb.org/t/p/w150_and_h225_bestv2/' + result.poster_path"
           :alt="result.original_title"
-          class="poster-image"
-        >
-
+          class="poster-image">
         <h2 class="title">
           <a :href="'https://www.themoviedb.org/movie/' + result.id">{{result.original_title}}</a>
         </h2>
-        <!-- TODO: Combine base URL with movie ID value in data to make the link href URL (Hint: Use v-bind.). -->
         <div class="ratings">
           <span class="rating-category critics-choice" v-if="result.vote_average > 8">Critic's Choice</span>
           <span class="rating-category well-liked" v-else-if="(result.vote_average > 7) && (result.vote_average <= 8)">Well Liked</span>
@@ -102,7 +98,7 @@ ul {
 }
 .genre-list li {
   border-radius: 4px;
-  background: #666;
+  background: cadetblue;
   color: #fff;
   font-weight: 800;
   font-size: 12px;
@@ -110,7 +106,11 @@ ul {
   display: inline-block;
   margin-right: 10px;
 }
+.vote-average {
+  padding-left: 5px;
+}
 a {
   color: #42b983;
 }
+
 </style>
